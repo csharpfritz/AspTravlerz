@@ -1,0 +1,38 @@
+<h2>Here are some trips to start: </h2>
+<table class="table table-striped table-hover" cellpadding="2" cellspacing="0">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Duration</th>
+    </tr>
+  <tr *ngFor="let trip of trips" [class.longTrip]="trip.longTrip" [class.selected]="trip === selectedTrip" (click)="onSelect(trip)">
+    <td>{{trip.name}}</td>
+    <td>{{trip.description}}</td>
+    <td>{{trip.startDate | date:'shortDate'}}</td>
+    <td>{{trip.endDate | date:'shortDate'}}</td>
+    <td>{{trip.DurationInDays}}</td>
+  </tr>
+</table>
+
+<fieldset *ngIf="selectedTrip">
+  <legend>{{selectedTrip.name}}</legend>
+
+  <dl class="dl-horizontal">
+    <dt>Name:</dt>
+    <dd>{{selectedTrip.name}}</dd>
+    <dt>Description:</dt>
+    <dd>{{selectedTrip.description}}</dd>
+    <dt>Start Date:</dt>
+    <dd>{{selectedTrip.startDate | date:'shortDate'}}</dd>
+    <dt>End Date:</dt>
+    <dd>{{selectedTrip.endDate | date:'shortDate'}}</dd>
+  </dl>
+
+  <p>
+    <a href="/trips/edit/{{selectedTrip.id}}">Edit</a>
+  </p>
+
+</fieldset>
+

@@ -1,0 +1,5 @@
+@model AspTravlerz.Web.Models.Trip
+
+<a asp-controller="Trips" 
+    asp-action="Details" 
+    asp-route-id="@Model.ID">@Model.Name</a>

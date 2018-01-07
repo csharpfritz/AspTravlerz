@@ -1,0 +1,11 @@
+@model IEnumerable<AspTravlerz.Web.Models.Trip> 
+    
+<ul>  
+
+@foreach (var trip in Model)  {    
+    <li>
+        @Html.Partial("Trip", trip)
+    </li>  
+}
+
+</ul>

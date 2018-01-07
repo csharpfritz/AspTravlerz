@@ -1,0 +1,13 @@
+@model Weather.WeatherProxy.WeatherModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<weather city="Philadelphia"></weather>
+
+<app>Loading...</app>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

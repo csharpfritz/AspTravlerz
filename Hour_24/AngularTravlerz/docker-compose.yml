@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    image: angulartravlerz
+    target_num_contaners: 3
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "80:80"
+      - "1936:1936"
+    

@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/** Header */
+.page-header {
+  background-image: url(/assets/img/header.jpg);
+  background-size: 100% 100%;
+  margin: 0;
+  height: 150px;
+  padding: 50px 10px 0px 10px;
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #FFF;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.navbar {
+  margin: -2px 0 0 0;
+  border-top: 0px;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+}
+
+h2 a {
+  color: #FFF;
+}
+
+  h2 a:hover {
+    color: yellow;
+  }
+
+/* Content */
+#content {
+  width: 100%;
+  padding: 5px;
+}
+
+.blue {
+  color: blue;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 5px;
+}

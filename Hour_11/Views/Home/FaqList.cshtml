@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Faq>
+
+<h2>Frequently Asked Questions</h2>
+
+<dl>
+@foreach (var item in Model)
+{
+    <dt>@item.Question</dt>
+    <dd>@item.Answer</dd>
+}
+</dl>

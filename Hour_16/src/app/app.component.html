@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+
+</div>
+<h2>Here are some trips to start: </h2>
+
+<ul>
+  <li *ngFor="let trip of trips">
+    <span [class.longTrip]="trip.longTrip">{{trip.Destination}} for {{trip.DurationInDays}} days</span>
+  </li>
+</ul>

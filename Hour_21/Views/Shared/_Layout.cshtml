@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - AngularTravlerz</title>
+        <base href="/" />
+        <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+        <link href="~/assets/site.css" rel="stylesheet" />
+    </head>
+    <body>
+  <header class="page-header">
+    <h2><a href="/">Welcome to ASP Travlerz</a></h2>
+  </header>
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">e
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/mytrips">Home</a></li>
+					<li><a asp-area="" asp-controller="Trips" asp-action="Index">My Trips</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+				</ul>
+
+				@Html.Partial("_LoginPartial")
+
+			</div>
+		</div>
+	</div>
+
+  <div id="content">
+    @RenderBody()
+  </div>
+
+  <footer>ASP Travlerz Website - @Html.ActionLink("Some Rights Reserved by Contributors", "About", "Home")</footer>
+
+  @RenderSection("scripts", false)
+
+    </body>
+</html>

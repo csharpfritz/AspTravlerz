@@ -1,0 +1,28 @@
+
+.longTrip {
+  font-style: italic;
+  font-weight: bold;
+  color: fireBrick;
+}
+
+th {
+  border-bottom: 1px solid #000;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr.selected {
+  background-color: lightsteelblue!important;
+}
+
+fieldset {
+  margin-top: 20px;
+}
+
+fieldset > p {
+  clear: both;
+  display: block;
+  margin-top: 10px;
+}

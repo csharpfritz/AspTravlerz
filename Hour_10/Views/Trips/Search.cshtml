@@ -1,0 +1,21 @@
+﻿@model IEnumerable<AspTravlerz.Models.Trip>
+
+<h1>Search for Trips</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    @foreach (var trip in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(trip.Name, "Details", new { id = trip.ID })</td>
+            <td>@trip.Destination</td>
+            <td>@trip.StartDate.ToString("d")</td>
+            <td>@trip.EndDate.ToString("d")</td>
+        </tr>
+    }
+</table>

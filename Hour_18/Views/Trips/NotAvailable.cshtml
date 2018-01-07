@@ -1,0 +1,9 @@
+@{
+	ViewData["Title"] = ViewBag.Id == null ? "No Trip Selected" : "Trip Not Found"; 
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Unable to locate the requested trip (@(ViewBag.Id ?? "null")).</p>
+
+<a asp-action="index">Back to the list of Trips</a>

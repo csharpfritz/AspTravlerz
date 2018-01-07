@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title>@ViewBag.Title</title>
+	<base href="/" />
+  <link href="~/assets/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="~/assets/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+  <link href="~/assets/site.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="page-header">
+    <h2><a href="/">Welcome to ASP Travlerz</a></h2>
+  </header>
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">e
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/mytrips">Home</a></li>
+					<li><a asp-area="" asp-controller="Trips" asp-action="Index">My Trips</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+  <div id="content">
+    @RenderBody()
+  </div>
+
+  <footer>ASP Travlerz Website - @Html.ActionLink("Some Rights Reserved by Contributors", "About", "Home")</footer>
+
+  <script src="~/assets/jquery/dist/jquery.js"></script>
+  <script src="~/assets/bootstrap/dist/js/bootstrap.js"></script>
+  @RenderSection("scripts", false)
+
+</body>
+</html>

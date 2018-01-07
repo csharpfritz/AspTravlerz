@@ -1,0 +1,69 @@
+@model IEnumerable<AspTravlerz.Models.Trip>
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService AuthorizationService
+@inject Microsoft.Extensions.Logging.ILoggerFactory loggerFactory
+@using Microsoft.Extensions.Logging
+
+@{
+    ViewData["Title"] = "My Trips";
+
+	var logger = loggerFactory.CreateLogger("TripsIndex");
+	logger.LogInformation("===>>  Authorized? " + (await AuthorizationService.AuthorizeAsync(User, null, "TripMaintainers")).ToString());
+
+}
+
+<h2>My Trips</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+							@if (await AuthorizationService.AuthorizeAsync(User, null, "TripMaintainers")) { 
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> @:|
+							}
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+							@if (await AuthorizationService.AuthorizeAsync(User, null, "TripMaintainers")) { 
+								
+									@:| <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+  						}
+						</td>
+
+				</tr>
+}
+    </tbody>
+</table>
+
+
+@User.IsInRole("Administrator")

@@ -1,0 +1,19 @@
+@model IEnumerable<AspTravlerz.Models.Faq>
+
+@{
+    ViewData["Title"] = "FaqList";
+}
+
+<h2>Frequently Asked Questions</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+			@foreach (var item in Model)
+			{
+				<faq item="@item"></faq>
+				<a asp-action="editFaq" asp-route-id="@item.ID">Edit Item</a>
+				<hr/>
+			}
+		</dl>
+</div>
