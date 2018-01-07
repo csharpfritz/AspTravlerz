@@ -40,6 +40,8 @@ namespace AspTravlerz {
 
       services.AddMvc();
 
+      services.AddScoped<TripRepository>();
+
       services.AddDbContext<TripDbContext>(options =>
         options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
       );
